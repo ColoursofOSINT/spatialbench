@@ -22,7 +22,7 @@ const COMPANY_LOGOS = {
 };
 
 const BENCHMARK_DATA = [
-  { rank: 1, model: 'Human Baseline', company: 'Human', pass1: 90.0, isBaseline: true },
+  { rank: 1, model: 'Human Baseline', company: 'UC Berkeley Engineering Student', pass1: 90.0, isBaseline: true },
   { rank: 2, model: 'GPT-5.1 (High Reasoning)', company: 'OpenAI', pass1: 20.0 },
   { rank: 3, model: 'Gemini 3.0 Pro Preview', company: 'Google', pass1: 18.0 },
   { rank: 4, model: 'Random Guessing', company: 'Baseline', pass1: 15.0, isBaseline: true },

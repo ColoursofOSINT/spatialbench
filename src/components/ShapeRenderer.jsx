@@ -45,7 +45,12 @@ const ShapeRenderer = ({ voxels, width, height, cameraPosition = null, randomVie
       roughness: 0.2,
       metalness: 0.1
     });
-    const lineMaterial = new THREE.LineBasicMaterial({ color: EDGE_COLOR, linewidth: 1 }); // Thinner lines
+    const lineMaterial = new THREE.LineBasicMaterial({ 
+      color: EDGE_COLOR, 
+      linewidth: 2,
+      depthTest: true,
+      depthWrite: true 
+    });
     const group = new THREE.Group();
 
     voxels.forEach(pos => {
