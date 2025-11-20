@@ -57,7 +57,7 @@ export default function BenchmarkLeaderboard() {
                  Since 3D questions (1/4 chance) are easier to guess than 2D questions (1/20 chance), we normalize difficulty by raising the 3D score to the power of 2.16. The final score is the average of the raw 2D score and the adjusted 3D score. This ensures random guessing yields exactly 5% across both sections.
                </p>
                <p className="text-xs text-gray-500 italic">
-                 Methodology developed by Alejandro Zarzuelo
+                 Scoring developed by Alejandro Zarzuelo
                </p>
              </div>
              <p className="text-xs text-gray-500">
