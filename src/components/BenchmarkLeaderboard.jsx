@@ -101,9 +101,7 @@ export default function BenchmarkLeaderboard() {
                     </div>
                     <div>
                       <div className={`font-medium ${row.isBaseline ? 'text-gray-600' : 'text-gray-900'}`}>{row.model}</div>
-                      <div className="text-xs text-gray-500">
-                        {row.model === 'Human Baseline' ? 'UC Berkeley Engineering Student' : row.company}
-                      </div>
+                      <div className="text-xs text-gray-500">{row.company}</div>
                     </div>
                   </div>
                 </td>
