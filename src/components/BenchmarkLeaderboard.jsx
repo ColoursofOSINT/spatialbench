@@ -8,7 +8,7 @@ const COMPANY_LOGOS = {
   'OpenAI': <img src={OpenAILogo} alt="OpenAI" className="w-full h-full" />,
   'Google': <img src={GeminiLogo} alt="Google Gemini" className="w-full h-full" />,
   'Anthropic': <img src={ClaudeLogo} alt="Anthropic Claude" className="w-full h-full" />,
-  'Human': (
+  'UC Berkeley Engineering Student': (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-full h-full">
       <circle cx="12" cy="8" r="4" />
       <path d="M6 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2" />

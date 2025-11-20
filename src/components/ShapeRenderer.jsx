@@ -45,11 +45,10 @@ const ShapeRenderer = ({ voxels, width, height, cameraPosition = null, randomVie
       roughness: 0.2,
       metalness: 0.1
     });
+    // Note: linewidth > 1 doesn't work in WebGL, so we use a darker color for visibility
     const lineMaterial = new THREE.LineBasicMaterial({ 
-      color: EDGE_COLOR, 
-      linewidth: 2,
-      depthTest: true,
-      depthWrite: true 
+      color: 0x000000,  // Use black for better visibility across all browsers
+      linewidth: 1
     });
     const group = new THREE.Group();
 
