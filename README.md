@@ -66,6 +66,8 @@ Since 3D questions have a 25% random guess rate (1/4) while 2D questions have on
 
 This ensures random guessing yields exactly 5% and prevents "stat-padding" on easier questions.
 
+*Methodology developed by Alejandro Zarzuelo*
+
 ## 🤝 Contributing
 
 Contributions are welcome! Feel free to:
