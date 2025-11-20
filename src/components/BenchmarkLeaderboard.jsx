@@ -85,12 +85,12 @@ export default function BenchmarkLeaderboard() {
             </>
           )}
         </div>
-        {!showFullFoundation && typeof window !== 'undefined' && window.innerWidth < 768 && (
+        {typeof window !== 'undefined' && window.innerWidth < 768 && (
           <button
-            onClick={() => setShowFullFoundation(true)}
+            onClick={() => setShowFullFoundation(!showFullFoundation)}
             className="mt-3 text-xs text-blue-600 hover:text-blue-800 font-medium"
           >
-            Read more...
+            {showFullFoundation ? 'Show less' : 'Read more...'}
           </button>
         )}
         <p className="text-xs text-gray-500 italic mt-4 text-right">
