@@ -8,7 +8,7 @@ const COMPANY_LOGOS = {
   'OpenAI': <img src={OpenAILogo} alt="OpenAI" className="w-full h-full" />,
   'Google': <img src={GeminiLogo} alt="Google Gemini" className="w-full h-full" />,
   'Anthropic': <img src={ClaudeLogo} alt="Anthropic Claude" className="w-full h-full" />,
-  'UC Berkeley Engineering Student': (
+  'Human': (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-full h-full">
       <circle cx="12" cy="8" r="4" />
       <path d="M6 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2" />
@@ -22,7 +22,7 @@ const COMPANY_LOGOS = {
 };
 
 const BENCHMARK_DATA = [
-  { rank: 1, model: 'Human Baseline', company: 'UC Berkeley Engineering Student', pass1: 90.0, isBaseline: true },
+  { rank: 1, model: 'Human Baseline', company: 'Human', pass1: 90.0, isBaseline: true },
   { rank: 2, model: 'GPT-5.1 (High Reasoning)', company: 'OpenAI', pass1: 20.0 },
   { rank: 3, model: 'Gemini 3.0 Pro Preview', company: 'Google', pass1: 18.0 },
   { rank: 4, model: 'Random Guessing', company: 'Baseline', pass1: 15.0, isBaseline: true },
@@ -92,7 +92,9 @@ export default function BenchmarkLeaderboard() {
                     </div>
                     <div>
                       <div className={`font-medium ${row.isBaseline ? 'text-gray-600' : 'text-gray-900'}`}>{row.model}</div>
-                      <div className="text-xs text-gray-500">{row.company}</div>
+                      <div className="text-xs text-gray-500">
+                        {row.model === 'Human Baseline' ? 'UC Berkeley Engineering Student' : row.company}
+                      </div>
                     </div>
                   </div>
                 </td>
