@@ -66,6 +66,22 @@ export default function BenchmarkLeaderboard() {
         </div>
       )}
 
+      {/* Motivation Section */}
+      <div className="mb-8 p-6 bg-gradient-to-r from-indigo-50 to-blue-50 rounded-lg border border-indigo-200">
+        <h3 className="text-xl font-bold text-gray-900 mb-4">Structural Foundation</h3>
+        <div className="text-sm text-gray-700 leading-relaxed space-y-3">
+          <p>
+            This benchmark excludes one-dimensional geometry as topologically trivial (limited to <span className="font-mono">ℝ</span> and <span className="font-mono">S¹</span>), focusing instead on the rigorous evaluation of spatial reasoning in <span className="font-mono">ℝ²</span> and <span className="font-mono">ℝ³</span>.
+          </p>
+          <p>
+            The 2D component targets the full Euclidean group <span className="font-mono">E(2)</span>, specifically assessing chirality and orientation sensitivity through path integration on directed graphs with non-trivial cycles, thereby capturing the complexity of planar manifolds beyond simple rotation.
+          </p>
+          <p>
+            In three dimensions, the benchmark evaluates competence within the special Euclidean group <span className="font-mono">SE(3) ≅ SO(3) ⋉ ℝ³</span>, requiring the agent to parameterize non-Abelian rotations—formally modelled by unit quaternions in <span className="font-mono">Sp(1)</span>—and solve inverse projection problems <span className="font-mono">π: ℝ³ → ℝ²</span>. This structure necessitates both the rigorous application of rigid-body transformations and the amodal completion of occluded geometries inherent to Shepard-Metzler tasks.
+          </p>
+        </div>
+      </div>
+
       <div className="mb-8 flex items-center justify-between">
         <div>
           <h2 className="text-2xl font-semibold tracking-tight text-gray-900">Spatial Reasoning Benchmark</h2>
