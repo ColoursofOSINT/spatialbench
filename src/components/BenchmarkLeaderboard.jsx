@@ -113,38 +113,37 @@ export default function BenchmarkLeaderboard() {
         </div>
       </div>
 
-      <div className="border border-gray-200 rounded-lg overflow-x-auto shadow-sm mx-4 sm:mx-0">
-        <table className="w-full text-left text-sm min-w-[600px]">
+      {/* Desktop Table */}
+      <div className="hidden sm:block border border-gray-200 rounded-lg overflow-hidden shadow-sm">
+        <table className="w-full text-left text-sm">
           <thead className="bg-gray-50 border-b border-gray-200 text-gray-500 font-medium">
             <tr>
-              <th className="px-3 sm:px-6 py-3 w-12 sm:w-16 text-center">#</th>
-              <th className="px-3 sm:px-6 py-3">Model</th>
-              <th className="px-3 sm:px-6 py-3 w-1/2">Pass@1 (%)</th>
+              <th className="px-6 py-3 w-16 text-center">#</th>
+              <th className="px-6 py-3">Model</th>
+              <th className="px-6 py-3 w-1/2">Pass@1 (%)</th>
             </tr>
           </thead>
           <tbody className="divide-y divide-gray-100 bg-white">
             {BENCHMARK_DATA.map((row) => (
               <tr key={row.model} className={`transition-colors ${row.isBaseline ? 'bg-gray-50/50' : 'hover:bg-gray-50'}`}>
-                <td className="px-3 sm:px-6 py-4 text-center text-gray-400 font-mono text-xs">{row.rank}</td>
-                <td className="px-3 sm:px-6 py-4">
-                  <div className="flex items-center gap-2 sm:gap-3">
-                    {/* Company Logo */}
-                    <div className={`w-6 h-6 sm:w-8 sm:h-8 rounded border flex items-center justify-center p-1 sm:p-1.5 flex-shrink-0 ${
+                <td className="px-6 py-4 text-center text-gray-400 font-mono text-xs">{row.rank}</td>
+                <td className="px-6 py-4">
+                  <div className="flex items-center gap-3">
+                    <div className={`w-8 h-8 rounded border flex items-center justify-center p-1.5 flex-shrink-0 ${
                       row.isBaseline ? 'bg-gray-100 border-gray-200 text-gray-600' : 'bg-gray-50 border-gray-100 text-gray-900'
                     }`}>
                       {COMPANY_LOGOS[row.company]}
                     </div>
-                    <div className="min-w-0">
-                      <div className={`font-medium text-xs sm:text-sm truncate ${row.isBaseline ? 'text-gray-600' : 'text-gray-900'}`}>{row.model}</div>
+                    <div>
+                      <div className={`font-medium ${row.isBaseline ? 'text-gray-600' : 'text-gray-900'}`}>{row.model}</div>
                       <div className="text-xs text-gray-500">{row.company}</div>
                     </div>
                   </div>
                 </td>
-                <td className="px-3 sm:px-6 py-4">
-                  <div className="flex items-center gap-2 sm:gap-4 w-full">
-                    <span className="font-mono font-medium text-gray-700 w-10 sm:w-12 text-right text-xs sm:text-sm">{row.pass1.toFixed(1)}</span>
-                    {/* Visual Progress Bar */}
-                    <div className="flex-1 h-2 bg-gray-100 rounded-full overflow-hidden max-w-[120px] sm:max-w-[200px]">
+                <td className="px-6 py-4">
+                  <div className="flex items-center gap-4 w-full">
+                    <span className="font-mono font-medium text-gray-700 w-12 text-right">{row.pass1.toFixed(1)}</span>
+                    <div className="flex-1 h-2 bg-gray-100 rounded-full overflow-hidden max-w-[200px]">
                        <div 
                          className={`h-full rounded-full transition-all duration-1000 ${
                             row.pass1 > 80 ? 'bg-emerald-500' : 
@@ -160,6 +159,41 @@ export default function BenchmarkLeaderboard() {
             ))}
           </tbody>
         </table>
+      </div>
+
+      {/* Mobile Card Layout */}
+      <div className="sm:hidden space-y-3 mx-4">
+        {BENCHMARK_DATA.map((row) => (
+          <div key={row.model} className={`border border-gray-200 rounded-lg p-4 ${row.isBaseline ? 'bg-gray-50/50' : 'bg-white'}`}>
+            <div className="flex items-start justify-between mb-3">
+              <div className="flex items-center gap-2 flex-1 min-w-0">
+                <span className="text-gray-400 font-mono text-xs flex-shrink-0">#{row.rank}</span>
+                <div className={`w-6 h-6 rounded border flex items-center justify-center p-1 flex-shrink-0 ${
+                  row.isBaseline ? 'bg-gray-100 border-gray-200 text-gray-600' : 'bg-gray-50 border-gray-100 text-gray-900'
+                }`}>
+                  {COMPANY_LOGOS[row.company]}
+                </div>
+                <div className="min-w-0 flex-1">
+                  <div className={`font-medium text-sm ${row.isBaseline ? 'text-gray-600' : 'text-gray-900'}`}>{row.model}</div>
+                  <div className="text-xs text-gray-500">{row.company}</div>
+                </div>
+              </div>
+            </div>
+            <div className="flex items-center gap-3">
+              <span className="font-mono font-bold text-lg text-gray-900">{row.pass1.toFixed(1)}%</span>
+              <div className="flex-1 h-2.5 bg-gray-100 rounded-full overflow-hidden">
+                <div 
+                  className={`h-full rounded-full transition-all duration-1000 ${
+                    row.pass1 > 80 ? 'bg-emerald-500' : 
+                    row.pass1 > 50 ? 'bg-blue-500' : 
+                    row.pass1 > 20 ? 'bg-amber-500' : 'bg-red-500'
+                  }`}
+                  style={{ width: `${row.pass1}%` }}
+                />
+              </div>
+            </div>
+          </div>
+        ))}
       </div>
       <div className="mt-4 text-xs text-gray-400 text-center px-4">
         Last updated: January 2025 • 50 problems (25 3D, 25 2D)
