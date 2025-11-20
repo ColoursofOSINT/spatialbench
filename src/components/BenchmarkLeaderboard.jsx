@@ -66,20 +66,23 @@ export default function BenchmarkLeaderboard() {
         </div>
       )}
 
-      {/* Motivation Section */}
-      <div className="mb-8 p-6 bg-gradient-to-r from-indigo-50 to-blue-50 rounded-lg border border-indigo-200">
-        <h3 className="text-xl font-bold text-gray-900 mb-4">Structural Foundation</h3>
-        <div className="text-sm text-gray-700 leading-relaxed space-y-3">
+      {/* Structural Foundation */}
+      <div className="mb-10 px-8 py-6 bg-gray-50/50 border-y border-gray-200">
+        <h3 className="text-base font-semibold text-gray-900 mb-4 tracking-tight">Structural Foundation</h3>
+        <div className="text-sm text-gray-800 leading-relaxed space-y-3 font-serif">
           <p>
-            This benchmark excludes one-dimensional geometry as topologically trivial (limited to <span className="font-mono">ℝ</span> and <span className="font-mono">S¹</span>), focusing instead on the rigorous evaluation of spatial reasoning in <span className="font-mono">ℝ²</span> and <span className="font-mono">ℝ³</span>.
+            This benchmark excludes one-dimensional geometry as topologically trivial (limited to <span className="font-serif italic">ℝ</span> and <span className="font-serif italic">S</span><sup>1</sup>), focusing instead on the rigorous evaluation of spatial reasoning in <span className="font-serif italic">ℝ</span><sup>2</sup> and <span className="font-serif italic">ℝ</span><sup>3</sup>.
           </p>
           <p>
-            The 2D component targets the full Euclidean group <span className="font-mono">E(2)</span>, specifically assessing chirality and orientation sensitivity through path integration on directed graphs with non-trivial cycles, thereby capturing the complexity of planar manifolds beyond simple rotation.
+            The 2D component targets the full Euclidean group <span className="font-serif italic">E</span>(2), specifically assessing chirality and orientation sensitivity through path integration on directed graphs with non-trivial cycles, thereby capturing the complexity of planar manifolds beyond simple rotation.
           </p>
           <p>
-            In three dimensions, the benchmark evaluates competence within the special Euclidean group <span className="font-mono">SE(3) ≅ SO(3) ⋉ ℝ³</span>, requiring the agent to parameterize non-Abelian rotations—formally modelled by unit quaternions in <span className="font-mono">Sp(1)</span>—and solve inverse projection problems <span className="font-mono">π: ℝ³ → ℝ²</span>. This structure necessitates both the rigorous application of rigid-body transformations and the amodal completion of occluded geometries inherent to Shepard-Metzler tasks.
+            In three dimensions, the benchmark evaluates competence within the special Euclidean group <span className="font-serif italic">SE</span>(3) ≅ <span className="font-serif italic">SO</span>(3) ⋉ <span className="font-serif italic">ℝ</span><sup>3</sup>, requiring the agent to parameterize non-Abelian rotations—formally modelled by unit quaternions in <span className="font-serif italic">Sp</span>(1)—and solve inverse projection problems <span className="font-serif italic">π</span>: <span className="font-serif italic">ℝ</span><sup>3</sup> → <span className="font-serif italic">ℝ</span><sup>2</sup>. This structure necessitates both the rigorous application of rigid-body transformations and the amodal completion of occluded geometries inherent to Shepard-Metzler tasks.
           </p>
         </div>
+        <p className="text-xs text-gray-500 italic mt-4 text-right">
+          — Alejandro Zarzuelo
+        </p>
       </div>
 
       <div className="mb-8 flex items-center justify-between">
