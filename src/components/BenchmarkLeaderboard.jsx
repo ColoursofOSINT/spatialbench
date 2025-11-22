@@ -4,12 +4,16 @@ import OpenAILogo from '../logos/openai.svg';
 import ClaudeLogo from '../logos/claude-color.svg';
 import GeminiLogo from '../logos/gemini-color.svg';
 import GrokLogo from '../logos/grok.svg';
+import QwenLogo from '../logos/qwen-color.svg';
+import MistralLogo from '../logos/mistral-color.svg';
 
 const COMPANY_LOGOS = {
   'OpenAI': <img src={OpenAILogo} alt="OpenAI" className="w-full h-full" />,
   'Google': <img src={GeminiLogo} alt="Google Gemini" className="w-full h-full" />,
   'Anthropic': <img src={ClaudeLogo} alt="Anthropic Claude" className="w-full h-full" />,
   'xAI': <img src={GrokLogo} alt="xAI Grok" className="w-full h-full" />,
+  'Qwen': <img src={QwenLogo} alt="Qwen" className="w-full h-full" />,
+  'Mistral': <img src={MistralLogo} alt="Mistral" className="w-full h-full" />,
   'Human': (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-full h-full">
       <circle cx="12" cy="8" r="4" />
@@ -25,11 +29,13 @@ const COMPANY_LOGOS = {
 
 const BENCHMARK_DATA = [
   { rank: 1, model: 'Human Baseline', company: 'Human', pass1: 80.0, isBaseline: true },
-  { rank: 2, model: 'Gemini 3.0 Pro Preview', company: 'Google', pass1: 9.55 },
-  { rank: 3, model: 'GPT-5.1 (High Reasoning)', company: 'OpenAI', pass1: 7.51 },
-  { rank: 4, model: 'Random Guessing', company: 'Baseline', pass1: 5.0, isBaseline: true },
-  { rank: 5, model: 'Claude Sonnet 4.5', company: 'Anthropic', pass1: 4.51 },
-  { rank: 6, model: 'Grok 4', company: 'xAI', pass1: 2.95 },
+  { rank: 2, model: 'Qwen-2.5-VL-72B-Instruct', company: 'Qwen', pass1: 12.9 },
+  { rank: 3, model: 'Gemini 3.0 Pro Preview', company: 'Google', pass1: 9.55 },
+  { rank: 4, model: 'GPT-5.1 (High Reasoning)', company: 'OpenAI', pass1: 7.51 },
+  { rank: 5, model: 'Pixtral 12B', company: 'Mistral', pass1: 5.05 },
+  { rank: 6, model: 'Random Guessing', company: 'Baseline', pass1: 5.0, isBaseline: true },
+  { rank: 7, model: 'Claude Sonnet 4.5', company: 'Anthropic', pass1: 4.51 },
+  { rank: 8, model: 'Grok 4', company: 'xAI', pass1: 2.95 },
 ];
 
 export default function BenchmarkLeaderboard() {
