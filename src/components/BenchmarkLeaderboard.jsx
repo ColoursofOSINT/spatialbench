@@ -33,15 +33,16 @@ const COMPANY_LOGOS = {
 
 const BENCHMARK_DATA = [
   { rank: 1, model: 'Human Baseline', company: 'Human', pass1: 80.0, isBaseline: true },
-  { rank: 2, model: 'Qwen-2.5-VL-72B-Instruct', company: 'Qwen', pass1: 12.9 },
-  { rank: 3, model: 'Gemini 3.0 Pro Preview', company: 'Google', pass1: 9.55 },
-  { rank: 4, model: 'Llama 3.2', company: 'Meta', pass1: 8.3 },
-  { rank: 5, model: 'GPT-5.1 (High Reasoning)', company: 'OpenAI', pass1: 7.51 },
-  { rank: 6, model: 'Pixtral 12B', company: 'Mistral', pass1: 5.05 },
-  { rank: 7, model: 'Random Guessing', company: 'Baseline', pass1: 5.0, isBaseline: true },
-  { rank: 8, model: 'Claude Sonnet 4.5', company: 'Anthropic', pass1: 4.51 },
-  { rank: 9, model: 'MiniMax 01 Vision', company: 'MiniMax', pass1: 4.0 },
-  { rank: 10, model: 'Grok 4', company: 'xAI', pass1: 2.95 },
+  { rank: 2, model: 'Qwen3-VL-235B-A22B-Instruct', company: 'Qwen', pass1: 13.5 },
+  { rank: 3, model: 'Qwen-2.5-VL-72B-Instruct', company: 'Qwen', pass1: 12.9 },
+  { rank: 4, model: 'Gemini 3.0 Pro Preview', company: 'Google', pass1: 9.55 },
+  { rank: 5, model: 'Llama 3.2', company: 'Meta', pass1: 8.3 },
+  { rank: 6, model: 'GPT-5.1 (High Reasoning)', company: 'OpenAI', pass1: 7.51 },
+  { rank: 7, model: 'Pixtral 12B', company: 'Mistral', pass1: 5.05 },
+  { rank: 8, model: 'Random Guessing', company: 'Baseline', pass1: 5.0, isBaseline: true },
+  { rank: 9, model: 'Claude Sonnet 4.5', company: 'Anthropic', pass1: 4.51 },
+  { rank: 10, model: 'MiniMax 01 Vision', company: 'MiniMax', pass1: 4.0 },
+  { rank: 11, model: 'Grok 4', company: 'xAI', pass1: 2.95 },
 ];
 
 export default function BenchmarkLeaderboard() {
